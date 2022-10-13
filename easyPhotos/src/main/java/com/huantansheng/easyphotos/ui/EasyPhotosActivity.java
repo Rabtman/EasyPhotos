@@ -61,6 +61,7 @@ import com.huantansheng.easyphotos.ui.widget.PressedTextView;
 import com.huantansheng.easyphotos.utils.Color.ColorUtils;
 import com.huantansheng.easyphotos.utils.String.StringUtils;
 import com.huantansheng.easyphotos.utils.bitmap.BitmapUtils;
+import com.huantansheng.easyphotos.utils.file.FileUtils;
 import com.huantansheng.easyphotos.utils.media.DurationUtils;
 import com.huantansheng.easyphotos.utils.media.MediaScannerConnectionUtils;
 import com.huantansheng.easyphotos.utils.permission.PermissionUtil;
@@ -1041,6 +1042,9 @@ public class EasyPhotosActivity extends AppCompatActivity implements AlbumItemsA
             case Result.PICTURE_OUT:
                 Toast.makeText(getApplicationContext(), getString(R.string.selector_reach_max_image_hint_easy_photos
                         , Setting.complexPictureCount), Toast.LENGTH_SHORT).show();
+                break;
+            case Result.PICTURE_SIZE_OUT:
+                Toast.makeText(getApplicationContext(), getString(R.string.selector_reach_max_image_size_easy_photos, FileUtils.getReadableFileSize(Setting.maxSize)), Toast.LENGTH_SHORT).show();
                 break;
             case Result.VIDEO_OUT:
                 Toast.makeText(getApplicationContext(), getString(R.string.selector_reach_max_video_hint_easy_photos

@@ -16,6 +16,8 @@
 
     <string name="selector_reach_max_hint_easy_photos">超出最大选择数</string>
 
+    <string name="selector_reach_max_image_size_easy_photos">图片大小超过最大限制%s</string>
+
     <string name="selector_reach_max_image_hint_easy_photos">最多只能选择%d张图片</string>
 
     <string name="selector_reach_max_video_hint_easy_photos">最多只能选择%d个视频</string>

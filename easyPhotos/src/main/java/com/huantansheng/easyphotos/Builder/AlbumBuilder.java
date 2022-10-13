@@ -261,6 +261,17 @@ public class AlbumBuilder {
     }
 
     /**
+     * 设置照片勾选的最大文件大小
+     *
+     * @param maxFileSize 最大文件大小，单位Bytes
+     * @return AlbumBuilder
+     */
+    public AlbumBuilder setMaxFileSize(long maxFileSize) {
+        Setting.maxSize = maxFileSize;
+        return AlbumBuilder.this;
+    }
+
+    /**
      * 设置显示照片的最小宽度
      *
      * @param minWidth 照片的最小宽度，单位Px
@@ -301,11 +312,11 @@ public class AlbumBuilder {
     /**
      * 设置默认选择图片集合
      *
-     * @param selectedPhotos 默认选择图片集合
+     * @param selectedPhotos             默认选择图片集合
      * @param isSequentialSelectedPhotos 当传入已选中图片时，是否按照之前选中的顺序排序
      * @return AlbumBuilder
      */
-    public AlbumBuilder setSelectedPhotos(ArrayList<Photo> selectedPhotos,boolean isSequentialSelectedPhotos) {
+    public AlbumBuilder setSelectedPhotos(ArrayList<Photo> selectedPhotos, boolean isSequentialSelectedPhotos) {
         Setting.selectedPhotos.clear();
         Setting.isSequentialSelectedPhotos = isSequentialSelectedPhotos;
         if (selectedPhotos.isEmpty()) {
@@ -352,13 +363,13 @@ public class AlbumBuilder {
     /**
      * 设置默认选择图片地址集合
      *
-     * @param selectedPhotoPaths 默认选择图片地址集合
+     * @param selectedPhotoPaths         默认选择图片地址集合
      * @param isSequentialSelectedPhotos 当传入已选中图片时，是否按照之前选中的顺序排序
      * @return AlbumBuilder
      * @Deprecated android 10 不推荐使用直接使用Path方式，推荐使用Photo类
      */
     @Deprecated
-    public AlbumBuilder setSelectedPhotoPaths(ArrayList<String> selectedPhotoPaths,boolean isSequentialSelectedPhotos) {
+    public AlbumBuilder setSelectedPhotoPaths(ArrayList<String> selectedPhotoPaths, boolean isSequentialSelectedPhotos) {
         Setting.selectedPhotos.clear();
         Setting.isSequentialSelectedPhotos = isSequentialSelectedPhotos;
         ArrayList<Photo> selectedPhotos = new ArrayList<>();

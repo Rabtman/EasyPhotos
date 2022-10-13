@@ -37,6 +37,7 @@ import com.huantansheng.easyphotos.setting.Setting;
 import com.huantansheng.easyphotos.ui.adapter.PreviewPhotosAdapter;
 import com.huantansheng.easyphotos.ui.widget.PressedTextView;
 import com.huantansheng.easyphotos.utils.Color.ColorUtils;
+import com.huantansheng.easyphotos.utils.file.FileUtils;
 import com.huantansheng.easyphotos.utils.system.SystemUtils;
 
 import java.util.ArrayList;
@@ -394,6 +395,9 @@ public class PreviewActivity extends AppCompatActivity implements PreviewPhotosA
                         Toast.makeText(getApplicationContext(),
                                 getString(R.string.selector_reach_max_image_hint_easy_photos,
                                         Setting.complexPictureCount), Toast.LENGTH_SHORT).show();
+                        break;
+                    case Result.PICTURE_SIZE_OUT:
+                        Toast.makeText(getApplicationContext(), getString(R.string.selector_reach_max_image_size_easy_photos, FileUtils.getReadableFileSize(Setting.maxSize)), Toast.LENGTH_SHORT).show();
                         break;
                     case Result.VIDEO_OUT:
                         Toast.makeText(getApplicationContext(),

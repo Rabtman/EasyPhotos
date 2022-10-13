@@ -1,7 +1,8 @@
 package com.huantansheng.easyphotos.setting;
 
-import androidx.annotation.IntDef;
 import android.view.View;
+
+import androidx.annotation.IntDef;
 
 import com.huantansheng.easyphotos.constant.Type;
 import com.huantansheng.easyphotos.engine.ImageEngine;
@@ -22,6 +23,7 @@ public class Setting {
     public static int minWidth = 1;
     public static int minHeight = 1;
     public static long minSize = 1;
+    public static long maxSize = -1;
     public static int count = 1;
 
     public static WeakReference<View> photosAdView = null;

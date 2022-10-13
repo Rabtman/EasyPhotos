@@ -21,11 +21,15 @@ public class Result {
     public static final int PICTURE_OUT = -1;
     public static final int VIDEO_OUT = -2;
     public static final int SINGLE_TYPE = -3;
+    public static final int PICTURE_SIZE_OUT = -4;
 
     /**
      * @return 0：添加成功 -2：超过视频选择数 -1：超过图片选择数
      */
     public static int addPhoto(Photo photo) {
+        if (Setting.maxSize != -1 && (!photo.type.contains(Type.VIDEO)) && photo.size >= Setting.maxSize) {
+            return PICTURE_SIZE_OUT;
+        }
         if (photos.isEmpty()) {
             photo.selected = true;
             photos.add(photo);
